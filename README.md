@@ -1,8 +1,8 @@
-#YOLO Standalone Wrapper Library
+# YOLO Standalone Wrapper Library
 This code is a c++ wrapper for YOLO DNN. It's main purpose is provide the ability of using YOLO DNN inside any C++ code.
-##Getting Started
+## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. **Please be noted that this code is tested on Ubuntu OS only**
-###Prerequisites
+### Prerequisites
 Things you need on your local machine, in order to be able to compile the library.
 ```
 - Nvidia GPU
@@ -10,7 +10,7 @@ Things you need on your local machine, in order to be able to compile the librar
 - Cuda Library
 - OpenCV Library
 ```
-###Installation
+### Installation
 To compile the library and install it to your **/usr/local/lib/**, please follow these steps:
 ```
 $ git clone https://AhmedFawzyElaraby@bitbucket.org/AhmedFawzyElaraby/yolo_standalone_wrapper.git
@@ -22,9 +22,9 @@ $ make -j
 $ make -j
 $ sudo make install
 ```
-###Deployment
+### Deployment
 To use this library in your c++ code, you have to add some c++ lines of code and edit your cmake to include:
-####C++ Code Example
+#### C++ Code Example
 Main.cpp
 ```
 #include "opencv2/opencv.hpp"
@@ -73,7 +73,7 @@ int main(int argc, char** argv)
 	return 0;
 }
 ```
-####CMake Example
+#### CMake Example
 CMakeLists.txt
 ```
 CMAKE_MINIMUM_REQUIRED  (VERSION 2.8.3)
