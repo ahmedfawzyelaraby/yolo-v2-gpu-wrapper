@@ -3,10 +3,12 @@ This code is a c++ wrapper for the GPU version of YOLO DNN source code. It's mai
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. **Please be noted that this code is tested on Ubuntu OS only**
 ### Prerequisites
-Things you need on your local machine, in order to be able to compile the library.
+Things you need on your local machine, in order to be able to compile the library:
 - Nvidia GPU with minimum **2 GB** GPU RAM.
 - Nvidia Driver
 ```
+$ sudo apt-get update
+$ sudo apt-get upgrade
 $ sudo add-apt-repository ppa:graphics-drivers
 $ sudo apt-get update
 $ sudo apt-get install nvidia-370
