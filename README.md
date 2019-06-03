@@ -1,24 +1,48 @@
-# YOLO Standalone Wrapper Library
-This code is a c++ wrapper for YOLO DNN. It's main purpose is provide the ability of using YOLO DNN inside any C++ code.
+# YOLO GPU C++ Wrapper Library
+This code is a c++ wrapper for the GPU version of YOLO DNN source code. It's main purpose is provide the ability of using YOLO DNN inside any C++ code.
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. **Please be noted that this code is tested on Ubuntu OS only**
 ### Prerequisites
 Things you need on your local machine, in order to be able to compile the library.
+- Nvidia GPU with minimum **2 GB** GPU RAM.
+- Nvidia Driver
 ```
-- Nvidia GPU
-- Compatible Nvidia Driver
+$ sudo add-apt-repository ppa:graphics-drivers
+$ sudo apt-get update
+$ sudo apt-get install nvidia-370
+```
 - Cuda Library
+```
+$ cd ~/Downloads
+$ wget https://developer.download.nvidia.com/compute/cuda/8.0/secure/Prod2/local_installers/cuda_8.0.61_375.26_linux.run
+$ sudo bash cuda_8.0.61_375.26_linux-run --silent --toolkit
+$ echo "export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}" >> ~/.bashrc
+$ echo "export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64 ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}" >> ~/.bashrc
+$ source ~/.bashrc
+```
 - OpenCV Library
+```
+$ sudo apt-get install build-essential
+$ sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+$ sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+$ cd ~/Downloads
+$ wget https://github.com/opencv/opencv/archive/2.4.13.5.zip
+$ unzip -u 2.4.13.5.zip
+$ cd opencv-2.4.13.5
+$ mkdir build
+$ cd build
+$ cmake -DWITH_OPENCL=OFF -DBUILD_EXAMPLES=OFF -DWITH_CUDA=OFF ..
+$ make -j
+$ sudo make install
 ```
 ### Installation
 To compile the library and install it to your **/usr/local/lib/**, please follow these steps:
 ```
-$ git clone https://AhmedFawzyElaraby@bitbucket.org/AhmedFawzyElaraby/yolo_standalone_wrapper.git
-$ cd [to_the_code_directory]/yolo_standalone_wrapper
+$ git clone https://github.com/ahmedfawzyelaraby/yolo-v2-gpu-wrapper.git
+$ cd [to_the_code_directory]/yolo-v2-gpu-wrapper
 $ mkdir build
 $ cd build
 $ cmake ..
-$ make -j
 $ make -j
 $ sudo make install
 ```
@@ -84,10 +108,10 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 FIND_PACKAGE(CUDA REQUIRED)
 FIND_PACKAGE(OpenCV REQUIRED)
 
-INCLUDE_DIRECTORIES(/usr/local/include/yolo_standalone_wrapper)
+INCLUDE_DIRECTORIES(/usr/local/include/yolo-v2-gpu-wrapper)
 INCLUDE_DIRECTORIES(${CUDA_INCLUDE_DIRS})
 
 ADD_EXECUTABLE(${PROJECT_NAME} Main.cpp)
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${OpenCV_LIBS} libStandaloneYOLOWrapper.so)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${OpenCV_LIBS} libYOLOGPUWrapper.so)
 
 ```
