@@ -1,5 +1,5 @@
 # YOLO GPU C++ Wrapper Library
-This code is a c++ wrapper for the GPU version of YOLO DNN source code. It's main purpose is provide the ability of using YOLO DNN inside any C++ code.
+This code is a c++ wrapper for the GPU version of YOLO DNN source code. It's main purpose is provide the ability of using YOLO DNN inside any C++ code. This repo was originally developed by [Eslam Ahmed](https://www.linkedin.com/in/eslam-ahmed-a54566b2) as a fork of the original [Darknet repo](https://github.com/pjreddie/darknet) and then restructured and change to build with CMake in this repo.
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. **Please be noted that this code is tested on Ubuntu OS only**
 ### Prerequisites
