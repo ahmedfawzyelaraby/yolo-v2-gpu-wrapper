@@ -35,7 +35,6 @@ $ mkdir build
 $ cd build
 $ cmake -DWITH_OPENCL=OFF -DBUILD_EXAMPLES=OFF -DWITH_CUDA=OFF ..
 $ make -j
-$ make -j
 $ sudo make install
 ```
 ### Installation
@@ -46,6 +45,7 @@ $ cd [to_the_code_directory]/yolo-v2-gpu-wrapper
 $ mkdir build
 $ cd build
 $ cmake ..
+$ make -j
 $ make -j
 $ sudo make install
 ```
